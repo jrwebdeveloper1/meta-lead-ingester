@@ -1,5 +1,5 @@
 {
-    "name": "vendor/meta-lead-ingester",
+    "name": "jrwebdeveloper1/meta-lead-ingester",
     "description": "Standalone plug-and-play Composer package for capturing, verifying, and ingesting Meta Lead Ads in real-time.",
     "type": "library",
     "license": "MIT",
