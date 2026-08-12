@@ -41,4 +41,16 @@ return [
     |
     */
     'queue' => env('META_LEAD_INGESTER_QUEUE', 'default'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard Settings
+    |--------------------------------------------------------------------------
+    |
+    | Configure the URL prefix and middleware for the built-in management dashboard.
+    | To secure this dashboard, add 'auth' to the dashboard_middleware array in your .env.
+    |
+    */
+    'dashboard_route_prefix' => env('META_LEAD_INGESTER_DASHBOARD_PREFIX', 'meta-lead-ingester/dashboard'),
+    'dashboard_middleware' => explode(',', env('META_LEAD_INGESTER_DASHBOARD_MIDDLEWARE', 'web')),
 ];

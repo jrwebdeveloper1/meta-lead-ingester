@@ -38,6 +38,8 @@ class MetaLeadIngesterServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'meta-lead-ingester');
+
         $this->registerRoutes();
     }
 
@@ -51,6 +53,10 @@ class MetaLeadIngesterServiceProvider extends ServiceProvider
         Route::group($this->routeConfiguration(), function () {
             $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         });
+
+        Route::group($this->webRouteConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        });
     }
 
     /**
@@ -63,6 +69,19 @@ class MetaLeadIngesterServiceProvider extends ServiceProvider
         return [
             'prefix' => config('meta-lead-ingester.route_prefix', 'api/meta-lead-ingester'),
             'middleware' => ['api'],
+        ];
+    }
+
+    /**
+     * Get the web route group configuration array.
+     *
+     * @return array
+     */
+    protected function webRouteConfiguration(): array
+    {
+        return [
+            'prefix' => config('meta-lead-ingester.dashboard_route_prefix', 'meta-lead-ingester/dashboard'),
+            'middleware' => config('meta-lead-ingester.dashboard_middleware', ['web']),
         ];
     }
 }
