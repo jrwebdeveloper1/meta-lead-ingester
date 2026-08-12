@@ -1,0 +1,33 @@
+{
+    "name": "vendor/meta-lead-ingester",
+    "description": "Standalone plug-and-play Composer package for capturing, verifying, and ingesting Meta Lead Ads in real-time.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Project Antigravity",
+            "email": "antigravity@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/routing": "^10.0|^11.0",
+        "illuminate/contracts": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\MetaLeadIngester\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vendor\\MetaLeadIngester\\MetaLeadIngesterServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
