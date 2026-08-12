@@ -7,9 +7,8 @@ A standalone plug-and-play Laravel package for capturing, verifying, and ingesti
 You can install the package via composer:
 
 ```bash
-composer require vendor/meta-lead-ingester
+composer require jrwebdeveloper1/meta-lead-ingester
 ```
-*(Note: Change `vendor/meta-lead-ingester` to your actual packagist vendor and package name if published).*
 
 ## Setup
 
