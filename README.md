@@ -33,6 +33,14 @@ META_LEAD_INGESTER_QUEUE="default"
 
 ## Usage
 
+### Dashboard Configuration
+The package comes with a built-in dashboard where you can add and manage your Meta and Google account credentials.
+Once installed, you can access the dashboard in your browser by visiting:
+```text
+/meta-lead-ingester/dashboard
+```
+*(Note: If you customize the dashboard route prefix in your `config/meta-lead-ingester.php`, use that URL instead.)*
+
 ### Meta Lead Ads
 This package exposes a webhook route (by default `api/meta-lead-ingester/webhook`) that you can plug into your Meta App Dashboard. When Meta sends a webhook event, the package automatically verifies the HMAC signature, dispatches a queue job to fetch lead details, and stores it in your database seamlessly.
 
